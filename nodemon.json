@@ -1,0 +1,22 @@
+{
+  "restartable": "rs",
+  "ignore": [
+    ".git",
+    "node_modules/**/node_modules"
+  ],
+  "verbose": true,
+  "execMap": {
+    "js": "npm run build-dev"
+  },
+  "events": {
+    "restart": "nodemon restarting..."
+  },
+  "watch": [
+    "test/fixtures/",
+    "test/samples/"
+  ],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "js json css"
+}

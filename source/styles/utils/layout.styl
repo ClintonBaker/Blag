@@ -1,0 +1,35 @@
+$flexColumns = column, column-reverse;
+$flexRows = row, row-reverse;
+
+-layout($which) {
+  // Not DRY for future improvements.
+  if ($which in $flexRows) {
+    display: flex;
+    flex-direction: $which;
+  } else if ($which in $flexColumns) {
+    display: flex;
+    flex-direction: $which;
+  }else {
+    display: $which;
+  }
+}
+
+-content-x($which) {
+  if (@flex-direction in $flexRows) {
+    justify-content: $which;
+  } else if (@flexDirection in $flexColumns) {
+    align-items: $which;
+  } else {
+    content-x: invalid "$which";
+  }
+}
+
+-content-y($which) {
+  if (@flex-direction in $flexColumns) {
+    justify-content: $which;
+  } else if (@flexDirection in $flexRows) {
+    align-items: $which;
+  } else {
+    content-y: invalid "$which";
+  }
+}
