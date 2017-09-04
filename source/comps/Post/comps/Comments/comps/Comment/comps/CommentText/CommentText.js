@@ -9,7 +9,9 @@ type PropsT = {
 const CommentText = (props: PropsT) => {
   return (
     <div styleName="CommentText">
-      <p>This is CommentText.</p>
+      <p>
+        This is a load of rubbish! Latveria will soon be liberated from your tyranny!
+      </p>
     </div>
   );
 };

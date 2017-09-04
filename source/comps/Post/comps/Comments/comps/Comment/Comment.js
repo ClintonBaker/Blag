@@ -1,4 +1,5 @@
 import { React } from '@packages';
+import { Author, CommentText } from './comps';
 
 import './styles/Comment.css';
 
@@ -9,7 +10,8 @@ type PropsT = {
 const Comment = (props: PropsT) => {
   return (
     <div styleName="Comment">
-      <p>This is Comment.</p>
+      <Author/>
+      <CommentText/>
     </div>
   );
 };

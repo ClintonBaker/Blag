@@ -1,5 +1,7 @@
 import { React } from '@packages';
 
+import { Avatar, Name } from './comps';
+
 import './styles/Author.css';
 
 type PropsT = {
@@ -9,7 +11,7 @@ type PropsT = {
 const Author = (props: PropsT) => {
   return (
     <div styleName="Author">
-      <p>This is Author.</p>
+      <span> <Avatar/> <Name/> </span>
     </div>
   );
 };
