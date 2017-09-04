@@ -1,4 +1,6 @@
 import { React } from '@packages';
+import { Post } from '../../comps'
+
 import './styles/PostView.css';
 
 type PropsT = {
@@ -8,7 +10,7 @@ type PropsT = {
 const PostView = (props: PropsT) => {
   return (
     <div styleName="PostView">
-      <p>This is PostView.</p>
+      <Post/>
     </div>
   );
 };
