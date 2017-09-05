@@ -1,16 +1,57 @@
 import { React } from '@packages';
+import { Post } from '@comps'
 import './styles/Home.css';
 
-type PropsT = {
-  children: any
+const API_POSTS_PATH = 'https://jsonplaceholder.typicode.com/posts';
+
+const getPosts = () => {
+  return fetch(API_POSTS_PATH).then( res =>
+      res.json()).then( json => {
+        return json;
+      });
 };
 
-const Home = (props: PropsT) => {
-  return (
-    <div styleName="Home">
-      <p>This is Home.</p>
-    </div>
-  );
+const generatePostsList = ( posts ) => {
+  return posts.map( (postData, index) => {
+    return(
+      <Post key={index} data={ postData }/>
+    )
+  })
+}
+
+class Home extends React.Component {
+  state = {
+    posts: []
+  };
+
+  retrievePosts = () => {
+      getPosts().then( posts => {
+        console.log({ posts });
+        this.setState({
+          posts
+        });
+      });
+  };
+
+  render() {
+    const postsHaveBeenFetched = !!this.state.posts.length;
+      return (
+          <div styleName='Home'>
+            <div styleName='Home-top'>
+              <p styleName='Home-title'>Home</p>
+              <a href='#' styleName='Search-button' onClick={this.retrievePosts}>search</a>
+            </div>
+            <hr/>
+            <div className='Posts'>
+            {
+              postsHaveBeenFetched
+              ? generatePostsList(this.state.posts)
+              : <small>I got nothin</small>
+            }
+            </div>
+          </div>
+      )
+  }
 };
 
 export default Home;

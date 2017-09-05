@@ -7,7 +7,7 @@ import { Layout, Post } from '@comps';
 export default () => (
   <Router history={hashHistory}>
     <Route path="/" component={Layout}>
-      <IndexRoute component={PostView} />
+      <IndexRoute component={Home} />
     </Route>
   </Router>
 );
