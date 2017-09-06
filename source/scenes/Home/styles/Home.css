@@ -15,8 +15,14 @@
 }
 
 .Home-content{
+  display: flex;
+  flex-direction: column;
 }
 
 .Home-content p{
   text-indent: 20px;
+}
+
+.Home-content img{
+  margin: auto;
 }
