@@ -1,6 +1,9 @@
 .Post {
-  property: value;
-  background: white;
-  Border-radius: 10px;
+  margin: 24px 0;
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(0,0,0,0.18);
+}
 
+.Post small{
+  font-style: italic;
 }

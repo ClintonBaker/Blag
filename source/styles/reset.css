@@ -3,10 +3,11 @@
 html, body, #main, [data-app-root] {
   font-family: 'Nunito', sans-serif;
   letter-spacing: 0.5px;
-  -size: 100vw 100vh;
-  -theme: light;
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
+  line-height: 1.4;
+  background: #f2f2f2;
 }
 
 [data-app-root] {

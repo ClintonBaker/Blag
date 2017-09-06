@@ -1,18 +1,54 @@
-.Home {
+hr{
+  height: 2px;
+  width: 100%;
+  margin: 12px 0;
+  opacity: .18;
+}
 
+small{
+  font-size: 80%;
+  color: #a99aa9;
+}
+
+.Home {
+  background: #fff;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 18px 24px;
+  margin: 24px;
+  max-width: calc(100vw - (24px * 2));
+  box-shadow: 2px 3px 14px rgba(0,0,0,0.1);
 }
 
 .Home-top{
-
+  line-height: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .Home-title{
+  margin: 0;
 }
 
 .Search-button{
-
+  text-decoration: none;
+  color: #fff;
+  background: #9e53d7;
+  height: 100%;
+  padding: 4px 8px;
+  border-radius: 4px;
+  box-shadow: 2px 3px 14px rgba(0,0,0,0.3);
 }
 
 .Search-button:hover{
+  transform: scale(1.04);
+  box-shadow: 0px 1px 19px rgba(0,0,0,0.4);
+  background: #be8ee2;
+}
 
+.Posts{
+  padding: 0px 12px 12px;
 }

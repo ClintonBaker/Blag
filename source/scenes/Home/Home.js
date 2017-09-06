@@ -38,11 +38,11 @@ class Home extends React.Component {
       return (
           <div styleName='Home'>
             <div styleName='Home-top'>
-              <p styleName='Home-title'>Home</p>
+              <div styleName='Home-title'>Home</div>
               <a href='#' styleName='Search-button' onClick={this.retrievePosts}>search</a>
             </div>
             <hr/>
-            <div className='Posts'>
+            <div styleName='Posts'>
             {
               postsHaveBeenFetched
               ? generatePostsList(this.state.posts)
