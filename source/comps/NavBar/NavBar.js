@@ -14,6 +14,9 @@ const NavBar = (props: PropsT) => {
         <li>
           <IndexLink to='/'>Home</IndexLink>
         </li>
+        <li>
+          <Link to='posts'>Posts</Link>
+        </li>
       </ul>
     </div>
   );
