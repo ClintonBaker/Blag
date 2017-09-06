@@ -1,3 +1,22 @@
 .Home {
-  property: value;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 2px 3px 14px rgba(0,0,0,0.1);
+  margin: 100px;
+  padding: 18px 24px;
+}
+
+.Home-title{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.Home-content{
+}
+
+.Home-content p{
+  text-indent: 20px;
 }
