@@ -8,13 +8,23 @@
 
 .NavBar li{
   list-style-type: none;
-  margin-left: 10px;
+  margin-left: 12px;
+  margin-right: 4px;
   padding: 0;
 }
 
 .NavBar a{
   text-decoration: none;
   color: black;
+}
+
+.NavBar a:hover{
+  border-left: 1px solid rgba(0,0,0,0.1);
+  border-right: 1px solid rgba(0,0,0,0.1);
+  margin-left: -3px;
+  margin-right: -3px;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
 .NavContent{
