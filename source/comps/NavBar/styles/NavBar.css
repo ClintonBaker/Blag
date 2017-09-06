@@ -1,0 +1,21 @@
+.NavBar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background: white;
+  box-shadow: 2px 3px 14px rgba(0,0,0,0.1);
+}
+
+.NavBar li{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.NavBar a{
+  text-decoration: none;
+  color: black;
+}
+
+.NavContent{
+}

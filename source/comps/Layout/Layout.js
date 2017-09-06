@@ -1,4 +1,5 @@
 import { React } from '@packages';
+import { NavBar } from '@comps';
 
 import './styles/Layout.css';
 
@@ -9,6 +10,7 @@ type PropsT = {
 const Layout = (props: PropsT) => {
   return (
     <div styleName="Layout">
+      <NavBar/>
       { props.children }
     </div>
   );
