@@ -17,6 +17,10 @@ class PostView extends React.Component {
     posts: []
   }
 
+  componentWillMount(){
+    this.retrievePosts();
+  }
+
   retrievePosts = () => {
     console.log('retrievePosts');
       getPosts().then( posts => {
@@ -28,17 +32,15 @@ class PostView extends React.Component {
 
   generatePost = ( posts ) =>{
     const postData = posts.filter( (data) =>{
-      if(data.id.toString() === this.props.params.id)
-        console.log(true);
+      if(data.id.toString() === this.props.params.id){
         return data;
+      }
     });
-    console.log(postData);
     return <Post data={postData[0]}/>
   }
 
   render(){
     const postsHaveBeenFetched = !!this.state.posts.length;
-    this.retrievePosts();
     return (
       <div styleName="PostView">
         {
