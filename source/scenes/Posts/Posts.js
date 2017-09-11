@@ -1,4 +1,5 @@
 import { React } from '@packages';
+import { Link } from 'react-router';
 import { Post } from '@comps'
 import './styles/Posts.css';
 
@@ -14,10 +15,12 @@ const getPosts = () => {
 const generatePostsList = ( posts ) => {
   return posts.map( (postData, index) => {
     return(
-      <Post key={index} data={ postData }/>
-    )
-  })
-}
+      <Link to={ '/postview/' + postData.id }>
+        <Post key={index} data={ postData }/>
+      </Link>
+    );
+  });
+};
 
 class Posts extends React.Component {
   state = {

@@ -33,7 +33,12 @@ small{
   margin: 0;
 }
 
-.Search-button{
+.Posts a{
+  text-decoration: none;
+  color: black;
+}
+
+.Posts .Search-button{
   text-decoration: none;
   color: #fff;
   background: #9e53d7;

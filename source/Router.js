@@ -9,6 +9,7 @@ export default () => (
     <Route path="/" component={Layout}>
       <IndexRoute component={Home} />
       <Route path='posts' name='posts' component={Posts}></Route>
+      <Route path='postview(/:id)' name='postview' component={PostView}></Route>
     </Route>
   </Router>
 );
