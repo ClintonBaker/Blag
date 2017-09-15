@@ -1,5 +1,4 @@
 import { React } from '@packages';
-import { Author, Comments, PostText } from './comps';
 
 import './styles/Post.css';
 
