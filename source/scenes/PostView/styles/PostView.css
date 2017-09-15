@@ -1,3 +1,12 @@
 .PostView {
-  property: value;
+  background: #fff;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 18px 24px;
+  margin: 24px;
+  max-width: calc(100vw - (24px * 2));
+  box-shadow: 2px 3px 14px rgba(0,0,0,0.1);
 }

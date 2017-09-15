@@ -1,0 +1,1 @@
+export PostMini from './PostMini';

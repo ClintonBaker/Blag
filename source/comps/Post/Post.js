@@ -11,8 +11,8 @@ const Post = (props: PropsT) => {
   const { data } = props;
   return (
     <div styleName="Post">
-      <h3>{data.title.substr(0, 20)}</h3>
-      <p>{data.body.substr(0, 80)}</p>
+      <h3>{data.title}</h3>
+      <p>{data.body}</p>
       <small>posted on 12/20/1993</small>
     </div>
   );

@@ -1,6 +1,6 @@
 import { React } from '@packages';
 import { Link } from 'react-router';
-import { Post } from '@comps'
+import { PostMini } from '@comps'
 import './styles/Posts.css';
 
 const API_POSTS_PATH = 'https://jsonplaceholder.typicode.com/posts';
@@ -16,7 +16,7 @@ const generatePostsList = ( posts ) => {
   return posts.map( (postData, index) => {
     return(
       <Link to={ '/postview/' + postData.id }>
-        <Post key={index} data={ postData }/>
+        <PostMini key={index} data={ postData }/>
       </Link>
     );
   });

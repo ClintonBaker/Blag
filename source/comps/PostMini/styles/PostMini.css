@@ -1,0 +1,9 @@
+.PostMini {
+  margin: 24px 0;
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(0,0,0,0.18);
+}
+
+.PostMini small{
+  font-style: italic;
+}

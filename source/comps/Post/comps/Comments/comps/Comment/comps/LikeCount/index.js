@@ -1,1 +1,0 @@
-export LikeCount from './LikeCount';

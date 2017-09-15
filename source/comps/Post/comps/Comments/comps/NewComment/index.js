@@ -1,1 +1,0 @@
-export NewComment from './NewComment';
