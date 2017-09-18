@@ -1,7 +1,16 @@
 .Post {
+  display: flex;
+  flex-direction: column;
   margin: 24px 0;
   padding-bottom: 12px;
-  border-bottom: 2px solid rgba(0,0,0,0.18);
+}
+
+.Post h3{
+  text-align: center;
+}
+
+.Post p{
+  text-indent: 20px;
 }
 
 .Post small{
