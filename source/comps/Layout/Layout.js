@@ -13,39 +13,31 @@ const getPosts = () => {
 };
 
 class Layout extends React.Component {
-  state = {
-    posts: []
-  }
-
-  componentWillMount(){
-    this.retrievePosts();
-  }
+  posts = [];
 
   setPosts = () => {
     return React.Children.map(this.props.children, child => {
       return React.cloneElement(child, {
-        posts: this.state.posts
+        posts: this.posts
       });
     });
   }
 
   retrievePosts = () => {
+    console.log('Posts updated');
       getPosts().then( posts => {
-        this.setState({
-          posts
-        });
+        this.posts = posts;
       });
   };
 
   render(){
-    const postsRetrieved = !!this.state.posts.length;
+    this.retrievePosts();
+    const postsRetrieved = !!this.posts.length;
     return (
       <div styleName="Layout">
         <NavBar/>
         {
-          postsRetrieved
-          ? this.setPosts()
-          : <small>Loading...</small>
+          this.setPosts()
         }
       </div>
     );
