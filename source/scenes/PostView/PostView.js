@@ -3,54 +3,25 @@ import { Post } from '../../comps'
 
 import './styles/PostView.css';
 
-const API_POSTS_PATH = 'https://jsonplaceholder.typicode.com/posts';
-
-const getPosts = () => {
-  return fetch(API_POSTS_PATH).then( res =>
-      res.json()).then( json => {
-        return json;
-      });
+type PropsT = {
+  children: any
 };
 
-class PostView extends React.Component {
-  state = {
-    posts: []
-  }
+const generatePost = ( posts, postID ) =>{
+  const postData = posts.filter( (data) =>{
+    if(data.id.toString() === postID){
+      return data;
+    }
+  });
+  return <Post data={postData[0]}/>
+}
 
-  componentWillMount(){
-    this.retrievePosts();
-  }
-
-  retrievePosts = () => {
-    console.log('retrievePosts');
-      getPosts().then( posts => {
-        this.setState({
-          posts
-        });
-      });
-  };
-
-  generatePost = ( posts ) =>{
-    const postData = posts.filter( (data) =>{
-      if(data.id.toString() === this.props.params.id){
-        return data;
-      }
-    });
-    return <Post data={postData[0]}/>
-  }
-
-  render(){
-    const postsHaveBeenFetched = !!this.state.posts.length;
-    return (
-      <div styleName="PostView">
-        {
-          postsHaveBeenFetched
-          ? this.generatePost(this.state.posts)
-          : <small>Loading...</small>
-        }
-      </div>
-    );
-  }
+const PostView = ( props: PropsT ) => {
+  return (
+    <div styleName="PostView">
+      { generatePost(props.posts, props.params.id) }
+    </div>
+  );
 };
 
 export default PostView;

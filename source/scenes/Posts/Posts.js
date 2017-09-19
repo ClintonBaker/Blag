@@ -3,13 +3,8 @@ import { Link } from 'react-router';
 import { PostMini } from '@comps'
 import './styles/Posts.css';
 
-const API_POSTS_PATH = 'https://jsonplaceholder.typicode.com/posts';
-
-const getPosts = () => {
-  return fetch(API_POSTS_PATH).then( res =>
-      res.json()).then( json => {
-        return json;
-      });
+type PropsT = {
+  children: any
 };
 
 const generatePostsList = ( posts ) => {
@@ -22,39 +17,18 @@ const generatePostsList = ( posts ) => {
   });
 };
 
-class Posts extends React.Component {
-  state = {
-    posts: []
-  };
-
-  retrievePosts = () => {
-      getPosts().then( posts => {
-        console.log({ posts });
-        this.setState({
-          posts
-        });
-      });
-  };
-
-  render() {
-    const postsHaveBeenFetched = !!this.state.posts.length;
-      return (
-          <div styleName='Posts'>
-            <div styleName='Posts-top'>
-              <div styleName='Posts-title'>All My Blag Posts:</div>
-              <a href='#/posts' styleName='Search-button' onClick={this.retrievePosts}>search</a>
-            </div>
-            <hr/>
-            <div styleName='Posts-list'>
-            {
-              postsHaveBeenFetched
-              ? generatePostsList(this.state.posts)
-              : <small>I got nothin</small>
-            }
-            </div>
-          </div>
-      )
-  }
+const Posts = ( props: PropsT ) => {
+  return (
+    <div styleName='Posts'>
+      <div styleName='Posts-top'>
+        <div styleName='Posts-title'>All My Blag Posts:</div>
+      </div>
+      <hr/>
+      <div styleName='Posts-list'>
+      { generatePostsList(props.posts) }
+      </div>
+    </div>
+  )
 };
 
 export default Posts;
